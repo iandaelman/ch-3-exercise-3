@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain
+﻿namespace Domain
     {
-    internal class BlackJackCard
+    public class BlackJackCard : Card
         {
+        public bool FaceUp { get; set; }
+        public int Value { get; }
+        public BlackJackCard(Suit suit, FaceValue faceValue) : base(suit, faceValue)
+            {
+            FaceUp = false;
+            }
+
+        public void TurnCard()
+            {
+            FaceUp = !FaceUp;
+            }
         }
     }
